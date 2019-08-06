@@ -19,8 +19,8 @@
 			<h3>凡客 Vancl 登录</h3>
 			<span>没有账户免费<a href="#">注册</a></span>
 		</div>
-		<!-- Reg登录部分 -->
-		<div class="Reg">
+		<!-- Reg登录部分  普通登录-->
+		<div class="Reg" style="display: none;">
 			<div class="tag">
 				<ul>
 					<a href="#">
@@ -32,7 +32,7 @@
 					<div class="users">
 						<div class="newtxt">
 							<label>
-								<input type="text" placeholder="请输入用户名">
+								<input type="text" placeholder="输入手机号">
 							</label>
 						</div>
 						<div class="newtxt">
@@ -65,11 +65,59 @@
 				</div>
 			</div>
 		</div>
+		<!-- Reg登录部分  快速登录 -->
+		<div class="Reg">
+			<div class="tag">
+				<ul>
+					<a href="#">
+						<li>普通登录</li>
+					    <li class="on">快速登录</li>
+					</a>
+				</ul>
+				<div>
+					<div class="users">
+						<div class="newtxt">
+							<label>
+								<input type="text" placeholder="输入手机号">
+								<input type="text">
+							</label>
+							
+							<a href="#" class="asPhoneregBtn">获取短信验证码</a>
+						</div>
+						<div class="newtxt">
+							<label>
+								<input type="password" placeholder="请输入密码" >
+							</label>
+						</div>
+						<div class="bt">
+							<div class="clear">
+								<a class="fly" href="#">登录</a>
+							</div>
+						</div>
+					</div>
+					<div class="lines">
+					</div>
+					<div class="glup">
+						<span class="blank10"></span>
+						<h2 class="hezuo">使用合作网站账号登录凡客</h2>
+						<span class="blank10"></span>
+						<p class="qking">
+							<a href="#" class="weixin"></a>
+							<a href="#" class="xiaomi"></a>
+							<a href="#" class="zhifubao"></a>
+							<a href="#" class="qq" ></a>
+							<a href="#" class="anquan"></a>
+							<a href="#" class="weibo"></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="advert">
 			<a href="#"><img src="img/footer.jpg" alt=""></a>
 		</div>
 	</div>
-	 <!-- 底部 -->
+	 <!-- 底部
 	<!-- footerAres	 -->
 	<div class="footerAres">
 		<div class="footerBottow">
@@ -79,9 +127,33 @@
 			 </div>
 		</div>
 		<span class="Space"></span>
-		<div class="footersub">
+		<div class="footersub">  
 			<a href="#"><img src="img/length.png" alt=""></a>
 		</div>
 	</div>
 </body>
 </html>
+<!-- <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	
+	//注册登录方式改变
+$(document).ready(function(){
+	$("#on").click(function(){
+		$(this).css("color","#333")
+		$(this).next().css("color","#999")
+		$(".quick_login").css("display","block")
+		$(".account_login").css("display","none")
+
+	})
+	$("#on").click(function(){
+		$(this).css("color","#333")
+		$(this).prev().css("color","#999")
+		$(".quick_login").css("display","none")
+		$(".account_login").css("display","block")
+	
+	})
+	
+});
+
+	
+</script> -->
