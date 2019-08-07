@@ -168,8 +168,33 @@
 		<div id="slider"></div>
 		<!-- Imgss -->
 		<div class="Imgss">
-			<a href="#"><img src="img/tlg.jpg" alt=""></a>
-			<a href="#"><img src="img/mm.jpg" alt=""></a>
+			<a href="#"><img src="img/tlg.jpg" alt=""></a>			
+			<div class="time-item" style="position: relative;">
+				<a href="#"><img src="img/mm.jpg" alt=""></a>
+				<!-- <span id="day_show">0天</span> -->
+				<div class="Times">
+					<strong id="hour_show"></strong>
+					<strong id="minute_show"></strong>
+					<strong id="second_show"></strong>
+				</div>
+			</div>
+		</div>
+		<!-- Sweiper轮播图 -->
+		<div class="swiper-container">
+			<!-- <div class="swiper-wrapper">
+				<div class="swiper-slide">Slide 1</div>
+				<div class="swiper-slide">Slide 2</div>
+				<div class="swiper-slide">Slide 3</div>
+			</div> -->
+			<!-- 如果需要分页器 -->
+			<!-- <div class="swiper-pagination"></div>
+			
+			<!-- 如果需要导航按钮 -->
+			<!-- <div class="swiper-button-prev"></div> -->
+			<!-- <div class="swiper-button-next"></div> -->
+			
+			<!-- 如果需要滚动条 -->
+			<!-- <div class="swiper-scrollbar"></div> -->
 		</div>
 		<!-- short -->
 		<div class="short">
@@ -679,16 +704,16 @@
         <div class="Spirit">
         	<ul>
         		<li class="SpiritOne">
-        			<a href="#"></a>
+        			<a href="javascrpit:"></a>
         		</li>
         		<li class="SpiritTwo">
-        			<a href="#"></a>
+        			<a href="javascrpit:"></a>
         		</li>
         		<li class="SpiritThree">
-        			<a href="#"></a>
+        			<a href="javascrpit:"></a>
         		</li>
         		<li class="SpiritFour">
-        			<a href="#" onclick="GoTop"></a>
+        			<a id="GoTop"></a>
         		</li>
         	</ul>
         </div>
@@ -749,5 +774,35 @@ function kkk(str){
 	}
 }
 
-
+//回到顶部
+$("#GoTop").click(function(){
+	$('body,html').animate({scrollTop:0},2000);
+	return false;
+});
+//倒计时
+var intDiff = parseInt(1000000*3600);//倒计时总秒数量
+function timer(intDiff){
+    window.setInterval(function(){
+    var day=0,
+        hour=0,
+        minute=0,
+        second=0;//时间默认值        
+    if(intDiff > 0){
+        day = Math.floor(intDiff / (60 * 60 * 24));
+        hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+        minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+        second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+    }
+    if (minute <= 9) minute = '0' + minute;
+    if (second <= 9) second = '0' + second;
+    $('#day_show').html(day+"");
+    $('#hour_show').html('<s id="h"></s>'+hour+'');
+    $('#minute_show').html('<s></s>'+minute+'');
+    $('#second_show').html('<s></s>'+second+'');
+    intDiff--;
+    }, 1000);
+} 
+$(function(){
+    timer(intDiff);
+}); 
 </script>
